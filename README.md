@@ -1,7 +1,19 @@
-# Problem
+## Install
+
+```bash
+yarn add es6-class-bind-all --dev
+```
+
+or npm
+
+```bash
+npm install es6-class-bind-all --save-dev
+```
+
+## Problem
 
 ```js
-class Eat {
+class Eater {
   constructor() {
     this.apple = 10
     this.banna = 20
@@ -25,12 +37,12 @@ class Eat {
 As you see, too many bind operations in constructor. Once you have tons of classes
 are called in callback or whatever something change it's scope, it will be horribly troublesome.
 
-# Fix
+## Easy way
 
 ```js
 import es6ClassBindAll from 'es6-class-bind-all'
 
-class Eat {
+class Eater {
   constructor() {
     this.apple = 10
     this.banna = 20
