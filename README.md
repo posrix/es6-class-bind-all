@@ -5,7 +5,7 @@ class Person {
   constructor() {
     this.name = 'Jack'
     this.age = 20
-    this.gender = 0
+    this.gender = 'male'
 
     this.setName = this.setName.bind(this)
     this.setAge = this.setAge.bind(this)
@@ -22,10 +22,12 @@ class Person {
   }
 }
 ```
-As you see, too many bind operations in constructor. Once you have tons of classes
+As you see, too many `.bind()` operations in constructor. Once you have tons of classes
 are called in callback or whatever something change it's scope, it will be horribly troublesome.
 
 ## Easy Way
+
+Bind all methods in constructor.
 
 ```js
 import es6ClassBindAll from 'es6-class-bind-all'
@@ -34,7 +36,7 @@ class Person {
   constructor() {
     this.name = 'Jack'
     this.age = 20
-    this.gender = 0
+    this.gender = 'female'
 
     es6ClassBindAll(this)
   }
@@ -50,7 +52,30 @@ class Person {
 }
 ```
 
-There you go.
+Bind specified methods in constructor depend on your situation.
+
+```js
+import es6ClassBindAll from 'es6-class-bind-all'
+
+class Person {
+  constructor() {
+    this.name = 'Jack'
+    this.age = 20
+    this.gender = 'female'
+
+    es6ClassBindAll(this, ['setName', 'setAge'])
+  }
+  setName(name) {
+    this.name = name
+  }
+  setAge(age) {
+    this.age = age
+  },
+  setGender(gender) {
+    this.gender = gender
+  }
+}
+```
 
 ## Install
 
