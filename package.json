@@ -1,6 +1,6 @@
 {
   "name": "es6-class-bind-all",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Automaticlly bind 'this' scope of all methods in es6 class",
   "main": "dist/es6ClassBindAll.js",
   "scripts": {
