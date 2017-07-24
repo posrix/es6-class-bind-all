@@ -1,36 +1,24 @@
-## Install
-
-```bash
-yarn add es6-class-bind-all --dev
-```
-
-or npm
-
-```bash
-npm install es6-class-bind-all --save-dev
-```
-
 ## Problem
 
 ```js
-class Eater {
+class Person {
   constructor() {
-    this.apple = 10
-    this.banna = 20
-    this.watermelon = 2
+    this.name = 'Jack'
+    this.age = 20
+    this.gender = 'male'
 
-    this.eatApple = this.eatApple.bind(this)
-    this.eatBanna = this.eatBanna.bind(this)
-    this.watermelon = this.watermelon.bind(this)
+    this.setName = this.setName.bind(this)
+    this.setAge = this.setAge.bind(this)
+    this.setGender = this.setGender.bind(this)
   }
-  eatApple(amount) {
-    this.apple = this.apple - amount
+  setName(name) {
+    this.name = name
   }
-  eatBanna(amount) {
-    this.banna = this.banna - amount
+  setAge(age) {
+    this.age = age
   },
-  eatWatermelon(amount) {
-    this.watermelon = this.watermelon - amount
+  setGender(gender) {
+    this.gender = gender
   }
 }
 ```
@@ -42,27 +30,39 @@ are called in callback or whatever something change it's scope, it will be horri
 ```js
 import es6ClassBindAll from 'es6-class-bind-all'
 
-class Eater {
+class Person {
   constructor() {
-    this.apple = 10
-    this.banna = 20
-    this.watermelon = 2
+    this.name = 'Jack'
+    this.age = 20
+    this.gender = 'male'
 
     es6ClassBindAll(this)
   }
-  eatApple(amount) {
-    this.apple = this.apple - amount
+  setName(name) {
+    this.name = name
   }
-  eatBanna(amount) {
-    this.banna = this.banna - amount
+  setAge(age) {
+    this.age = age
   },
-  eatWatermelon(amount) {
-    this.watermelon = this.watermelon - amount
+  setGender(gender) {
+    this.gender = gender
   }
 }
 ```
 
 There you go.
+
+## Install
+
+```bash
+yarn add es6-class-bind-all --dev
+```
+
+or npm
+
+```bash
+npm install es6-class-bind-all --save-dev
+```
 
 ## License
 
