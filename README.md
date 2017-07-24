@@ -1,5 +1,8 @@
 ## Problem
 
+As you see, too many `.bind()` operations in constructor. Once you have tons of classes
+are called in callback or whatever something change it's scope, it will be horribly troublesome.
+
 ```js
 class Person {
   constructor() {
@@ -22,8 +25,6 @@ class Person {
   }
 }
 ```
-As you see, too many `.bind()` operations in constructor. Once you have tons of classes
-are called in callback or whatever something change it's scope, it will be horribly troublesome.
 
 ## Easy Way
 
@@ -52,7 +53,7 @@ class Person {
 }
 ```
 
-Bind specified methods in constructor depend on your situation.
+Or you can bind specified methods in constructor depend on your situation.
 
 ```js
 import es6ClassBindAll from 'es6-class-bind-all'
@@ -63,7 +64,7 @@ class Person {
     this.age = 20
     this.gender = 'female'
 
-    es6ClassBindAll(this, ['setName', 'setAge'])
+    es6ClassBindAll(this, ['setGender'])
   }
   setName(name) {
     this.name = name
