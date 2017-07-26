@@ -6,7 +6,7 @@ are called in callback or whatever something change it's scope, it will be horri
 ```js
 class Person {
   constructor() {
-    this.name = 'Jack'
+    this.name = 'Steve'
     this.age = 20
     this.gender = 'male'
 
@@ -37,7 +37,7 @@ class Person {
   constructor() {
     this.name = 'Jack'
     this.age = 20
-    this.gender = 'female'
+    this.gender = 'male'
 
     es6ClassBindAll(this)
   }
@@ -56,26 +56,7 @@ class Person {
 Or you can bind specified methods in constructor depend on your situation.
 
 ```js
-import es6ClassBindAll from 'es6-class-bind-all'
-
-class Person {
-  constructor() {
-    this.name = 'Jack'
-    this.age = 20
-    this.gender = 'female'
-
-    es6ClassBindAll(this, ['setGender'])
-  }
-  setName(name) {
-    this.name = name
-  }
-  setAge(age) {
-    this.age = age
-  },
-  setGender(gender) {
-    this.gender = gender
-  }
-}
+es6ClassBindAll(this, ['setGender'])
 ```
 
 ## Install
